@@ -1,0 +1,118 @@
+.cars-item {
+    width: 505px;
+    height: 257px;
+    margin: auto;
+    padding: 30px 30px 0px;
+    background-color: #fff;
+    @include webkit(border-radius, 24px);
+    @include webkit(box-shadow, 0 0 18px 0 rgba(0,0,0,.2));
+    @include webkit(box-sizing, border-box);
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.car-logo {
+    img{
+        display: inline-block;
+        height: 34px;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    .name {
+        font-size: 16px;
+    }
+}
+.cars-attr {
+    line-height: 34px;
+    opacity: 0.5;
+}
+.cars-content {
+    position: relative;
+    margin: 11px 0 7px;
+    @extend %clearfix;
+    img {
+        float: right;
+        height: 120px;
+    }
+    .info {
+        display: flex;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+    }
+    .cars-number {
+        font-size: 18px;
+    }
+    .cars-electric {
+        margin-top: 4px;
+        display: inline-block;
+        li {
+            display: inline-block;
+            width: 7px;
+            height: 24px;
+            margin-right: 3px;
+            background-color: #e1e1e1;
+            @include webkit(border-radius, 100px);
+            box-sizing: border-box;
+        }
+        @for $i from 1 to 10 {
+            &.active-li-#{$i} {
+                li:nth-child(-n+#{$i}) {
+                    @include webkitA(background, linear-gradient(to top, #17a8fa, #108dd9));
+                }
+            }
+        }
+        // &.active-li-1 {
+        //     li:nth-child(-n+5) {
+        //         @include webkitA(background, linear-gradient(to top, #17a8fa, #108dd9));
+        //     }
+        // }
+        // li.active {
+        //     @include webkitA(background, linear-gradient(to top, #17a8fa, #108dd9));
+        // }
+    }
+    .distance {
+        vertical-align: bottom;
+        display: inline-block;
+        margin-left: 10px;
+        strong, sub {
+            vertical-align: middle;
+        }
+        strong {
+            font-size: 22px;
+            margin: 0 5px;
+        }
+        // 找到指定类型的第一个元素
+        sub:first-of-type {
+            opacity: .5;
+        }
+        // 找到指定类型的最后元素
+        sub:last-of-type {
+            opacity: .9;
+        }
+    }
+}
+.footer-link {
+    position: relative;
+    display: block;
+    border-top: 1px solid #e1e1e1;
+    color: $color-main;
+    opacity: .8;
+    line-height: 53px;
+}
+.footer-link::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 8px;height: 8px;
+    margin-top: -8px;
+    border-top: 1px solid #d6d7d9;
+    border-right: 1px solid #d6d7d9;
+    @include webkit(transform, rotate(45deg));
+    color: $color-main;
+}

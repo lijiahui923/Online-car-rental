@@ -1,1 +1,15 @@
 @import './normalize.scss';
+@import './sassConfig.scss';
+i[class^=icon] {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+    background-color: $color-main;
+    margin: 0 17px;
+}
