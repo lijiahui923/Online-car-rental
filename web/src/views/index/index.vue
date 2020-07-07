@@ -5,7 +5,7 @@
     <!-- 导航 -->
     <navbar></navbar>
     <!-- dom渲染 -->
-    <Cars></Cars>
+    <!-- <Cars></Cars> -->
     <!-- 会员 -->
     <div id="children-view" :class="{open: show}">
       <router-view />
@@ -51,11 +51,7 @@ export default {
   width: 410px;
   z-index: 101;
   background-color: #34393f;
-  transition: all .3s ease 0s;
-  -webkit-transition: all .3s ease 0s;
-  -moz-transition: all .3s ease 0s;
-  -ms-transition: all .3s ease 0s;
-  -o-transition: all .3s ease 0s;
+  @include webkit(transition, all .3s ease 0s);
   &.open {
     right: 0;
   }

@@ -45,21 +45,4 @@ export default {
         vertical-align:middle;
     }
 }
-.select-car-btn {
-    display: inline-block;
-    width: 240px;
-    height: 84px;
-    line-height: 84px;
-    text-align: center;
-    font-size: 26px;
-    font-weight: 300;
-    color: #fff;
-    background-color: $color-main;
-    border-radius: 100px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    -ms-border-radius: 100px;
-    -o-border-radius: 100px;
-    margin: 0 17px;
-}
 </style>

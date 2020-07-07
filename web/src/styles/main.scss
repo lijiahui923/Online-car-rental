@@ -13,3 +13,47 @@ i[class^=icon] {
     background-color: $color-main;
     margin: 0 17px;
 }
+
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.clearfix {
+    @extend %clearfix;
+}
+.fs-24 {
+    font-size: 24px;
+}
+.p-r {
+    position: relative;
+}
+.p-a {
+    position: absolute;
+}
+.color-main {
+    color: $color-main;
+}
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.select-car-btn {
+    display: inline-block;
+    width: 240px;
+    height: 84px;
+    line-height: 84px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 300;
+    color: #fff;
+    background-color: $color-main;
+    @include webkit(border-radius, 100px);
+    margin: 0 17px;
+}
