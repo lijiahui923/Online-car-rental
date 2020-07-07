@@ -1,12 +1,15 @@
 <template>
-  <div class="index-wrap">
-    <swiper class="swiper" :options="swiperOptions">
-    <swiper-slide>
-      <CarsList></CarsList>
-    </swiper-slide>
-    <div class="swiper-button-prev" slot="button-prev"></div>
-    <div class="swiper-button-next" slot="button-next"></div>
-  </swiper>
+  <div class="cars-wrap">
+    <div class="cars-wiper-wrap">
+      <swiper class="swiper" :options="swiperOption">
+        <swiper-slide><carsItem></carsItem></swiper-slide>
+        <swiper-slide><carsItem></carsItem></swiper-slide>
+        <swiper-slide><carsItem></carsItem></swiper-slide>
+        <swiper-slide><carsItem></carsItem></swiper-slide>
+    </swiper>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
+    </div>
       <span @click="user">汽车列表</span>
   </div>
 </template>
@@ -19,19 +22,25 @@
 */
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css';
-import CarsList from '@c/carsList';
+import carsItem from '@c/carsList';
 export default {
   name: 'cars',
   props: {},
-  components: { CarsList, Swiper, SwiperSlide },
+  components: { carsItem, Swiper, SwiperSlide },
   data() {
     return {
-      swiperOptions: {
-        pagination: {
-          el: '.swiper-pagination'
-        },
-        // Some Swiper option/callback...
-      }
+      swiperOption: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }
+        }
     };
   },
   computed: {},
