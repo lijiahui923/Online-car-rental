@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 
 import "./plugin/aMap";
+import "lib-flexible";
 Vue.config.productionTip = false;
 
 new Vue({

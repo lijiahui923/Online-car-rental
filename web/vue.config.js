@@ -10,6 +10,16 @@ module.exports = {
    * webpack配置,see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
    **/
   chainWebpack: (config) => {
+    config.module
+      .rule("css")
+      .test(/\.css$/)
+      .oneOf("vue")
+      .resourceQuery(/\?vue/)
+      .use("px2rem")
+      .loader("px2rem-loader")
+      .options({
+        remUnit: 192
+    });
     // const svgRule = config.module.rule("svg");     
     // svgRule.uses.clear();     
     // svgRule
