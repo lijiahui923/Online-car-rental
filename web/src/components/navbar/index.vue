@@ -1,11 +1,11 @@
 <template>
   <div class="navbar">
       <ul>
-          <li><i class="icon icon-help">?</i></li>
-          <li><i class="icon icon-help">?</i></li>
+          <li><i class="icon icon-wh-44">?</i></li>
+          <li><i class="icon icon-wh-44">?</i></li>
           <li><a href="javascript:void(0);" class="select-car-btn">选择车辆</a></li>
-          <li><i class="icon icon-help">?</i></li>
-          <li><i class="icon icon-help">?</i></li>
+          <li><i class="icon icon-wh-44">?</i></li>
+          <li @click="members"><i class="icon icon-wh-44">会员</i></li>
       </ul>
   </div>
 </template>
@@ -27,7 +27,11 @@ export default {
   watch: {},
   mounted() {},
   created() {},
-  methods: {}
+  methods: {
+    members () {
+      this.$router.push({name: 'User'});
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

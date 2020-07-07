@@ -37,7 +37,15 @@ export default {
     }
   },
   watch: {},
-  mounted() {},
+  mounted() {
+    document.addEventListener('mouseup', e => {
+      const userCon = document.getElementById('children-view');
+      // 如果这个元素是否包含这个对象的目标
+      if (userCon && !userCon.contains(e.target)) {
+        this.$router.push({name: 'Index'});
+      }
+    });
+  },
   created() {},
   methods: {}
 };
@@ -52,6 +60,7 @@ export default {
   z-index: 101;
   background-color: #34393f;
   @include webkit(transition, all .3s ease 0s);
+  @include webkit(box-shadow, -5px 0 38px 0 rgba(0,0,0,.4));
   &.open {
     right: 0;
   }

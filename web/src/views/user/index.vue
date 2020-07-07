@@ -1,5 +1,46 @@
 <template>
-  <div>用户</div>
+  <div class="user">
+    <div class="user-info">
+      <img src="./../../assets/headphoto.png" alt="">
+      <div class="meta">
+        <h4 class="name">用户名称</h4>
+        <div class="level">文明驾驶<strong>0</strong></div>
+      </div>
+    </div>
+    <ul class="group-link">
+      <li>
+        <router-link to="/" tag="a" class="arrow">
+          <i></i>
+          <span>我的账户</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/" tag="a">
+          <i></i>
+          <span>我的账户</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/" tag="a">
+          <i></i>
+          <span>我的账户</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/" tag="a">
+          <i></i>
+          <span>我的账户</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/" tag="a">
+          <i></i>
+          <span>我的账户</span>
+        </router-link>
+      </li>
+    </ul>
+    <div class="logout">退出</div>
+  </div>
 </template>
 
 <script>
@@ -22,4 +63,6 @@ export default {
   methods: {}
 };
 </script>
-<style scoped></style>
+<style lang="scss" scoped>
+@import './index.scss';
+</style>
