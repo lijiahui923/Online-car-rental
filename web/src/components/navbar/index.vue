@@ -1,11 +1,11 @@
 <template>
   <div class="navbar">
       <ul>
-          <li><i class="icon icon-wh-44">?</i></li>
-          <li><i class="icon icon-wh-44">?</i></li>
+          <li><i class="icon icon-wh-44"><svg-icon  icon-class="user" class-name='sicon'/></i></li>
+          <li><i class="icon icon-wh-44"><svg-icon  icon-class="user" class-name='sicon'/></i></li>
           <li><a href="javascript:void(0);" class="select-car-btn">选择车辆</a></li>
-          <li><i class="icon icon-wh-44">?</i></li>
-          <li @click="members"><i class="icon icon-wh-44">会员</i></li>
+          <li><i class="icon icon-wh-44"><svg-icon  icon-class="user" class-name='sicon'/></i></li>
+          <li @click="members"><i class="icon icon-wh-44"><svg-icon  icon-class="user" class-name='sicon'/></i></li>
       </ul>
   </div>
 </template>
@@ -35,6 +35,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.sicon {
+  font-size: 20px;
+}
 .navbar {
     position: fixed;
     left: 0;

@@ -1,0 +1,109 @@
+i[class^=icon] {
+    display: inline-block;
+    line-height: 46px;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+    background-color: $color-main;
+    margin: -20px 17px;
+}
+.icon-wh-44 {
+    width: 44px;
+    height: 44px;
+    color: #fff;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.clearfix {
+    @extend %clearfix;
+}
+.fs-24 {
+    font-size: 24px;
+}
+.p-r {
+    position: relative;
+}
+.p-a {
+    position: absolute;
+}
+.color-main {
+    color: $color-main;
+}
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.select-car-btn {
+    display: inline-block;
+    width: 240px;
+    height: 84px;
+    line-height: 84px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 300;
+    color: #fff;
+    background-color: $color-main;
+    @include webkit(border-radius, 100px);
+    margin: 0 17px;
+}
+.user-container {
+    margin: 0 30px;
+}
+.group-link {
+    i {
+        display: inline-block;
+        margin: 0px 30px -10px 0px;
+    }
+    a {
+        display: block;
+        margin: 0 -30px;
+        padding: 0 30px;
+        line-height: 64px;
+        color: rgba(255,255,255, .4);
+        border-bottom: 1px solid rgba(255,255,255, .3);
+        font-size: 15x;
+        position: relative;
+    }
+    .arrow::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid rgba(255,255,255, .3);
+        border-right: 1px solid rgba(255,255,255, .3);
+        box-sizing: border-box;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+    }
+}
+.logout {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    width: 165px;
+    height: 58px;
+    text-align: center;
+    line-height: 58px;
+    color: #fff;
+    bottom: 40px;
+    background-color: #2d3339;
+    @include webkit(border-radius,100px);
+    @include webkit(transform, translate(-82px, 58px));
+    font-size: 16px;
+}

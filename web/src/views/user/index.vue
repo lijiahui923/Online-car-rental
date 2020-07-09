@@ -1,5 +1,5 @@
 <template>
-  <div class="user">
+  <div class="user-container">
     <div class="user-info">
       <img src="./../../assets/headphoto.png" alt="">
       <div class="meta">
@@ -10,32 +10,32 @@
     <ul class="group-link">
       <li>
         <router-link to="/" tag="a" class="arrow">
-          <i></i>
+          <i><svg-icon  icon-class="account" class-name='sicon'/></i>
           <span>我的账户</span>
         </router-link>
       </li>
       <li>
         <router-link to="/" tag="a">
-          <i></i>
-          <span>我的账户</span>
+          <i><svg-icon  icon-class="order" class-name='sicon'/></i>
+          <span>租车订单</span>
         </router-link>
       </li>
       <li>
         <router-link to="/" tag="a">
-          <i></i>
-          <span>我的账户</span>
+          <i><svg-icon  icon-class="name" class-name='sicon'/></i>
+          <span>实名认证</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/safe" tag="a">
+          <i><svg-icon  icon-class="setup" class-name='sicon'/></i>
+          <span>安全设置</span>
         </router-link>
       </li>
       <li>
         <router-link to="/" tag="a">
-          <i></i>
-          <span>我的账户</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/" tag="a">
-          <i></i>
-          <span>我的账户</span>
+          <i><svg-icon  icon-class="help" class-name='sicon'/></i>
+          <span>帮助中心</span>
         </router-link>
       </li>
     </ul>
@@ -65,4 +65,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import './index.scss';
+.sicon {
+  font-size: 30px;
+  color: #1296db;
+}
 </style>

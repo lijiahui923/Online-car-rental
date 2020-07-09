@@ -1,6 +1,3 @@
-.user {
-    margin: 0 30px;
-}
 .user-info {
     display: flex;
     padding: 84px 0 80px 10px;
@@ -29,53 +26,4 @@
             }
         }
     }
-}
-.group-link {
-    i {
-        display: inline-block;
-        width: 30px;height: 30px;
-        background-color: pink;
-        margin: 30px 30px -10px 0px;
-    }
-    a {
-        display: block;
-        margin: 0 -30px;
-        padding: 0 30px;
-        line-height: 64px;
-        color: rgba(255,255,255, .4);
-        border-bottom: 1px solid rgba(255,255,255, .3);
-        font-size: 15x;
-        position: relative;
-    }
-    .arrow::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        right: 30px;
-        width: 10px;
-        height: 10px;
-        border-top: 1px solid rgba(255,255,255, .3);
-        border-right: 1px solid rgba(255,255,255, .3);
-        box-sizing: border-box;
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-}
-}
-.logout {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    width: 165px;
-    height: 58px;
-    text-align: center;
-    line-height: 58px;
-    color: #fff;
-    bottom: 40px;
-    background-color: #2d3339;
-    @include webkit(border-radius,100px);
-    @include webkit(transform, translate(-82px, 58px));
-    font-size: 16px;
 }

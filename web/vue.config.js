@@ -20,15 +20,20 @@ module.exports = {
       .options({
         remUnit: 192
     });
-    // const svgRule = config.module.rule("svg");     
-    // svgRule.uses.clear();     
-    // svgRule
-    // .use("svg-sprite-loader")
-    // .loader("svg-sprite-loader")
-    // .options({ 
-    //   symbolId: "icon-[name]",
-    //   include: ["./src/icons"] 
-    // });
+    const svgRule = config.module.rule('svg')
+    // 清除已有的所有 loader,如果你不这样做，接下来的 loader 会附加在该规则现有的 loader 之后。
+    svgRule.uses.clear()
+    // 添加要替换的 loader
+    svgRule.use('svg-sprite-loader').loader('svg-sprite-loader')
+    .options({
+        symbolId: 'icon-[name]'
+    });
+    // 修改images loader 添加svg处理
+    // const imagesRule = config.module.rule('images')
+    // imagesRule.exclude.add(resolve('src/assets/icons'))
+    // config.module
+    //   .rule('images')
+    //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/);
   },
   configureWebpack: (config) => {
     config.resolve = { // 配置解析别名
