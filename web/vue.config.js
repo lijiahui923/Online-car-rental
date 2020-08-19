@@ -10,16 +10,16 @@ module.exports = {
    * webpack配置,see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
    **/
   chainWebpack: (config) => {
-    config.module
-      .rule("css")
-      .test(/\.css$/)
-      .oneOf("vue")
-      .resourceQuery(/\?vue/)
-      .use("px2rem")
-      .loader("px2rem-loader")
-      .options({
-        remUnit: 192
-    });
+    // config.module
+    //   .rule("css")
+    //   .test(/\.css$/)
+    //   .oneOf("vue")
+    //   .resourceQuery(/\?vue/)
+    //   .use("px2rem")
+    //   .loader("px2rem-loader")
+    //   .options({
+    //     remUnit: 192
+    // });
     const svgRule = config.module.rule('svg')
     // 清除已有的所有 loader,如果你不这样做，接下来的 loader 会附加在该规则现有的 loader 之后。
     svgRule.uses.clear()
