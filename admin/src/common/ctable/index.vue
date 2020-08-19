@@ -39,7 +39,7 @@
 @create:lijiahui
 */
 export default {
-    name: 'SuperTable',
+    name: 'ctable',
     components: {},
     props: {
         data: {

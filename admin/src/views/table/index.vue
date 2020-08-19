@@ -37,7 +37,7 @@
           </el-button>
         </el-form-item>
       </el-form>
-      <superTable
+      <ctable
         :column="column"
         :data="list"
         :height="height"
@@ -63,17 +63,16 @@
             </el-button>
           </template>
         </el-table-column>
-      </superTable>
+      </ctable>
     </el-card>
   </div>
 </template>
 
 <script>
-import superTable from "./../../components/common/superTable";
 import { columns } from "./columns";
 import axios from "axios";
 export default {
-    components: { superTable },
+    components: { },
     filters: {
         statusFilter(status) {
             const statusMap = {
