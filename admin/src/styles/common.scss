@@ -1,0 +1,10 @@
+.page-container {
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.page-container::-webkit-scrollbar {
+    display: none;
+}
