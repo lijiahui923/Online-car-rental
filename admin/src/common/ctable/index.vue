@@ -19,16 +19,7 @@
       />
       <slot />
     </el-table>
-    <el-pagination
-      class="currentPaage"
-      :current-page="currentPage"
-      :page-sizes="[100, 200, 300, 400]"
-      :page-size="100"
-      layout="total, sizes, prev, pager, next, jumper"
-      :total="400"
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-    />
+    <cpagination></cpagination>
   </div>
 </template>
 
@@ -38,9 +29,10 @@
 @createTime:2020-08-06
 @create:lijiahui
 */
+import cpagination from './../../components/pagination';
 export default {
     name: 'ctable',
-    components: {},
+    components: { cpagination },
     props: {
         data: {
             type: Array,
@@ -81,7 +73,7 @@ export default {
     },
     data() {
         return {
-            currentPage: 5
+            
         };
     },
     computed: {},
@@ -89,14 +81,9 @@ export default {
     mounted() {},
     created() {},
     methods: {
-        handleSizeChange () {},
-        handleCurrentChange () {}
+        
     }
 };
 </script>
 <style scoped>
-.currentPaage {
-  padding-top: 10px;
-  text-align: right;
-}
 </style>

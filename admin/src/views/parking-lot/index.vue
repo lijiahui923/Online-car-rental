@@ -1,8 +1,12 @@
 <template>
   <div class="page-container" >
     <el-card>
-      <search><el-button type="primary" size="small" class="button">新增</el-button></search>
-      <!-- <superTable
+      <search>
+        <router-link to="/parkingAdd">
+          <el-button type="primary" size="small" class="button">新增</el-button>
+        </router-link>
+      </search>
+      <ctable
         :column="column"
         :data="list"
         :height="height"
@@ -13,7 +17,7 @@
             <el-button type="text" size="small">编辑</el-button> 
           </template>
         </el-table-column>
-      </superTable> -->
+      </ctable>
     </el-card>
   </div>
 </template>
@@ -25,17 +29,32 @@
 @create:lijiahui
 */
 import search from './search';
+import { columns } from "./columns";
+import { GetList } from './../../api/parking';
+import common from './../../mixins/common';
 export default {
   name: 'parking-lot',
   props: {},
   components: { search },
+  mixins:[common],
   data() {
-    return {};
+    return {
+      column: columns(),
+      // 页面需要减去多少的高度
+      minHeight: 205
+    };
   },
   computed: {},
   watch: {},
   mounted() {},
-  created() {},
+  created() {
+    let params = {pageSize:1, pageNumber:10}
+    GetList(params).then(res =>{
+      let  { data } = res.data;
+      this.list = data;
+    });
+  },
+  mounted() {},
   methods: {}
 };
 </script>

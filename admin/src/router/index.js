@@ -59,15 +59,15 @@ export const defaultRoutesMap = [{
         name: 'parking',
         meta: { title: '停车场', icon: 'el-icon-s-help' },
         children: [{
-                path: 'index',
+                path: '/index',
                 name: 'Index',
                 component: () =>
                     import ('@/views/parking-lot/index'),
                 meta: { title: '列表管理', icon: 'table' }
             },
             {
-                path: 'add',
-                name: 'Add',
+                path: '/parkingAdd',
+                name: 'ParkingAdd',
                 component: () =>
                     import ('@/views/parking-lot/add'),
                 meta: { title: '新增停车场', icon: 'tree' }
