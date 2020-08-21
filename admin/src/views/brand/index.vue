@@ -2,9 +2,7 @@
   <div class="page-container">
     <el-card>
       <search>
-        <router-link to="/parkingAdd">
-          <el-button type="primary" size="small" class="button">新增</el-button>
-        </router-link>
+          <el-button type="primary" size="small" class="button" @click="brandAdd">新增</el-button>
       </search>
       <ctable
         :column="column"
@@ -19,6 +17,7 @@
         </el-table-column>
       </ctable>
     </el-card>
+    <dialogAdd :dialogVisible.sync="dialogVisible"></dialogAdd>
   </div>
 </template>
 
@@ -30,18 +29,20 @@
 */
 import search from './search';
 import { columns } from "./columns";
-import { GetList } from './../../api/parking';
+import { GetList } from './../../api/brand';
 import common from './../../mixins/common';
+import dialogAdd from './../brand/dialog-add';
 export default {
-  name: 'parking-lot',
+  name: 'brand',
   props: {},
-  components: { search },
+  components: { search, dialogAdd },
   mixins:[common],
   data() {
     return {
       column: columns(),
       // 页面需要减去多少的高度
-      minHeight: 205
+      minHeight: 205,
+      dialogVisible: false
     };
   },
   computed: {},
@@ -55,7 +56,11 @@ export default {
     });
   },
   mounted() {},
-  methods: {}
+  methods: {
+      brandAdd () {
+          this.dialogVisible = true;
+      }
+  }
 };
 </script>
 <style scoped>

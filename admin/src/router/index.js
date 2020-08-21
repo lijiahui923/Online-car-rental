@@ -37,14 +37,14 @@ export const defaultRoutesMap = [{
         name: 'Example',
         meta: { title: '例子', icon: 'el-icon-s-help' },
         children: [{
-                path: 'table',
+                path: '/table',
                 name: 'Table',
                 component: () =>
                     import ('@/views/table/index'),
                 meta: { title: 'Table', icon: 'table' }
             },
             {
-                path: 'tree',
+                path: '/tree',
                 name: 'Tree',
                 component: () =>
                     import ('@/views/tree/index'),
@@ -73,6 +73,20 @@ export const defaultRoutesMap = [{
                 meta: { title: '新增停车场', icon: 'tree' }
             }
         ]
+    },
+    {
+        path: '/brand',
+        component: Layout,
+        redirect: '/brand/index',
+        name: 'brand',
+        meta: { title: '车辆管理', icon: 'el-icon-s-help' },
+        children: [{
+            path: '/brandIndex',
+            name: 'BrandIndex',
+            component: () =>
+                import ('@/views/brand/index'),
+            meta: { title: '品牌管理', icon: 'table' }
+        }]
     },
     // 404 page must be placed at the end !!!
     { path: '*', redirect: '/404', hidden: true }
