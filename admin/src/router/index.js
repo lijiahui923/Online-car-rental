@@ -37,14 +37,14 @@ export const defaultRoutesMap = [{
         name: 'Example',
         meta: { title: '例子', icon: 'el-icon-s-help' },
         children: [{
-                path: '/table',
+                path: 'table',
                 name: 'Table',
                 component: () =>
                     import ('@/views/table/index'),
                 meta: { title: 'Table', icon: 'table' }
             },
             {
-                path: '/tree',
+                path: 'tree',
                 name: 'Tree',
                 component: () =>
                     import ('@/views/tree/index'),
@@ -59,14 +59,14 @@ export const defaultRoutesMap = [{
         name: 'parking',
         meta: { title: '停车场', icon: 'el-icon-s-help' },
         children: [{
-                path: '/index',
+                path: 'index',
                 name: 'Index',
                 component: () =>
                     import ('@/views/parking-lot/index'),
                 meta: { title: '列表管理', icon: 'table' }
             },
             {
-                path: '/parkingAdd',
+                path: 'parkingAdd',
                 name: 'ParkingAdd',
                 component: () =>
                     import ('@/views/parking-lot/add'),
@@ -77,11 +77,11 @@ export const defaultRoutesMap = [{
     {
         path: '/brand',
         component: Layout,
-        redirect: '/brand/index',
+        redirect: '/brand/brandIndex',
         name: 'brand',
         meta: { title: '车辆管理', icon: 'el-icon-s-help' },
         children: [{
-            path: '/brandIndex',
+            path: 'brandIndex',
             name: 'BrandIndex',
             component: () =>
                 import ('@/views/brand/index'),
