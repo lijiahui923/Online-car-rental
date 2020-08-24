@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-dialog title="新增车辆品牌" :visible.sync="show" width="30%">
+    <el-dialog title="新增车辆品牌" :visible.sync="show" width="40%">
         <el-form :model="brandFrom" label-width="120px">
             <el-form-item label="品牌名称(中)">
                 <el-input v-model="brandFrom.nameCh" autocomplete="off"></el-input>
@@ -9,7 +9,35 @@
                 <el-input v-model="brandFrom.nameEn" autocomplete="off"></el-input>
             </el-form-item>
             <el-form-item label="品牌LOGO">
-                <el-input v-model="brandFrom.imgUrl" autocomplete="off"></el-input>
+                <!-- <el-input v-model="brandFrom.imgUrl" autocomplete="off"></el-input> -->
+                <el-upload
+                    action="#"
+                    list-type="picture-card"
+                    :limit="1"
+                    :auto-upload="false">
+                        <i slot="default" class="el-icon-plus"></i>
+                        <div slot="file" slot-scope="{file}">
+                        <img
+                            class="el-upload-list__item-thumbnail"
+                            :src="file.url" alt=""
+                        >
+                        <span class="el-upload-list__item-actions">
+                            <span
+                            class="el-upload-list__item-preview"
+                            @click="handlePictureCardPreview(file)"
+                            >
+                            <i class="el-icon-download"></i>
+                            </span>
+                            <span
+                            v-if="!disabled"
+                            class="el-upload-list__item-delete"
+                            @click="handleRemove(file)"
+                            >
+                            <i class="el-icon-delete"></i>
+                            </span>
+                        </span>
+                        </div>
+                    </el-upload>
             </el-form-item>
             <el-form-item label="状态">
                 <el-select v-model="brandFrom.status" placeholder="请选择状态" style="width:100%;">
@@ -40,7 +68,9 @@ export default {
   props: {
       dialogVisible: {
           type: Boolean,
-          defalut:false
+          defalut:false,
+          dialogImageUrl: '',
+          disabled: false
       }
   },
   components: {},
@@ -68,6 +98,13 @@ export default {
     close () {
         this.show = false;
         this.$emit('update:dialogVisible', false);
+    },
+    handleRemove(file) {
+        console.log(file);
+    },
+    handlePictureCardPreview(file) {
+    // this.dialogImageUrl = file.url;
+    // this.dialogVisible = true;
     }
   }
 };

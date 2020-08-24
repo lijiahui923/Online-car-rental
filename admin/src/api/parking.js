@@ -9,3 +9,35 @@ export function GetList(data) {
         data
     });
 }
+
+export function Add(data) {
+    return service.request({
+        method: 'post',
+        url: '/parking/add/',
+        data
+    });
+}
+
+export function Detailed(data) {
+    return service.request({
+        method: 'post',
+        url: '/parking/detailed/',
+        data
+    });
+}
+
+export function Edit(data) {
+    return service.request({
+        method: 'post',
+        url: '/parking/edit/',
+        data
+    });
+}
+
+export function Eelete(data) {
+    return service.request({
+        method: 'post',
+        url: '/parking/delete/',
+        data
+    });
+}

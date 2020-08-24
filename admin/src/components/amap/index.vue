@@ -43,8 +43,3 @@ export default {
   methods: {}
 };
 </script>
-<style scoped>
-.as {
-  height: 100vh;
-}
-</style>

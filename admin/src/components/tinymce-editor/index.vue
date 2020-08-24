@@ -82,6 +82,8 @@ export default {
             this.myValue = newValue;
         },
         myValue(newValue) {
+            console.log(newValue);
+            // v-model是一个语法糖等于:value+@input
             this.$emit('input', newValue);
         }
     }

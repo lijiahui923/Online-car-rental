@@ -79,14 +79,36 @@ export const defaultRoutesMap = [{
         component: Layout,
         redirect: '/brand/brandIndex',
         name: 'brand',
-        meta: { title: '车辆管理', icon: 'el-icon-s-help' },
+        meta: { title: '品牌管理', icon: 'el-icon-s-help' },
         children: [{
             path: 'brandIndex',
             name: 'BrandIndex',
             component: () =>
                 import ('@/views/brand/index'),
-            meta: { title: '品牌管理', icon: 'table' }
+            meta: { title: '品牌列表', icon: 'table' }
         }]
+    },
+    {
+        path: '/cars',
+        component: Layout,
+        redirect: '/cars/carsIndex',
+        name: 'cars',
+        meta: { title: '车辆管理', icon: 'el-icon-s-help' },
+        children: [{
+                path: 'carsIndex',
+                name: 'CarsIndex',
+                component: () =>
+                    import ('@/views/cars/index'),
+                meta: { title: '车辆列表', icon: 'table' }
+            },
+            {
+                path: 'carsAdd',
+                name: 'CarsAdd',
+                component: () =>
+                    import ('@/views/cars/cars-add'),
+                meta: { title: '新增车辆', icon: 'table' }
+            }
+        ]
     },
     // 404 page must be placed at the end !!!
     { path: '*', redirect: '/404', hidden: true }

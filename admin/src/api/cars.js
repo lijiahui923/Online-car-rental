@@ -1,11 +1,11 @@
 import service from '@/utils/request';
 /**
- * 品牌列表
+ * 车辆管理
  */
 export function GetList(data) {
     return service.request({
         method: 'post',
-        url: '/brand/list/',
+        url: '/cars/list/',
         data
     });
 }
@@ -13,7 +13,7 @@ export function GetList(data) {
 export function Add(data) {
     return service.request({
         method: 'post',
-        url: '/brand/add/',
+        url: '/cars/add/',
         data
     });
 }
@@ -21,7 +21,7 @@ export function Add(data) {
 export function Detailed(data) {
     return service.request({
         method: 'post',
-        url: '/brand/detailed/',
+        url: '/cars/detailed/',
         data
     });
 }
@@ -29,7 +29,7 @@ export function Detailed(data) {
 export function Edit(data) {
     return service.request({
         method: 'post',
-        url: '/brand/edit/',
+        url: '/cars/edit/',
         data
     });
 }
@@ -37,25 +37,16 @@ export function Edit(data) {
 export function Eelete(data) {
     return service.request({
         method: 'post',
-        url: '/brand/delete/',
+        url: '/cars/delete/',
         data
     });
 }
 
-// 车辆品牌标志
-export function Logo(data) {
-    return service.request({
-        method: 'post',
-        url: '/brand/logo/',
-        data
-    });
-}
-
-// 车辆品牌禁启用
+// 车辆禁启用
 export function Status(data) {
     return service.request({
         method: 'post',
-        url: '/brand/status/',
+        url: '/cars/status/',
         data
     });
 }
