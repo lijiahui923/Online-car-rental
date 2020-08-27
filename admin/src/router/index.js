@@ -70,7 +70,8 @@ export const defaultRoutesMap = [{
                 name: 'ParkingAdd',
                 component: () =>
                     import ('@/views/parking-lot/add'),
-                meta: { title: '新增停车场', icon: 'tree' }
+                meta: { title: '新增停车场', icon: 'tree' },
+                hidden: true
             }
         ]
     },

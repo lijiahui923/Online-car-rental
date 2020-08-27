@@ -37,9 +37,15 @@ export default {
         center: [116.397428, 39.90923],
         zoom: this.zoom
       });
+      // 获取鼠标点击经纬度
+      this.map.on('click', e => {
+        this.$emit('lonlag', e.lnglat.getLng() + ',' + e.lnglat.getLat());
+      });
     });
   },
   created() {},
-  methods: {}
+  methods: {
+    
+  }
 };
 </script>

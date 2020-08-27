@@ -1,6 +1,7 @@
 <template>
-  <div class="page-container" >
+  <div class="page-container">
     <el-card>
+      <header-title :title="title"></header-title>
       <el-form :rules="rules" label-width="100px" ref="parkForm" :model="parkLotForm" size="mini">
           <el-row>
             <el-col :xs="24" :md="12" :lg="8">
@@ -10,7 +11,7 @@
             </el-col>
             <el-col :xs="24" :md="12" :lg="8">
               <el-form-item label="区域" prop="area">
-                <el-input v-model="parkLotForm.area"></el-input>
+                <ccascader v-model="parkLotForm.area"></ccascader>
               </el-form-item>
             </el-col>
             <el-col :xs="24" :md="12" :lg="8">
@@ -64,12 +65,12 @@
           </el-row>
           <el-row>
             <el-col>
-              <amap :defaultHeight="mapHeight"></amap>
+              <amap :defaultHeight="mapHeight" @lonlag="lonlag"></amap>
             </el-col>
           </el-row>
       </el-form>
       <div style="text-align:center;margin-top:30px;">
-        <el-button　@click="submitForm">保存</el-button>
+        <el-button　@click="submitForm"> 保存 </el-button>
         <el-button>取消</el-button>
       </div>
     </el-card>
@@ -90,6 +91,10 @@ export default {
   components: { amap },
   data() {
     return {
+      title: {
+        primaryTitle: '停车场列表',
+        secondaryTitle: '新增'
+      },
       parkLotForm: {
         parkingName:'',
         area: '',
@@ -131,7 +136,11 @@ export default {
   mounted() {},
   created() {},
   methods: {
+    lonlag　(value) {
+      this.parkLotForm.lnglat = value;
+    },
     submitForm () {
+      console.log(this.parkLotForm);
       this.$refs.parkForm.validate(valid => {
         if (valid) {
           Add(this.parkLotForm).then( res => {
@@ -139,6 +148,7 @@ export default {
               message: res.message,
               type: 'success'
             });
+            this.$router.push({ name:'Index'});
           })
         }
       });
@@ -146,4 +156,6 @@ export default {
   }
 };
 </script>
-<style scoped></style>
+<style scoped>
+
+</style>

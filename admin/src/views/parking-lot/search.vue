@@ -5,7 +5,8 @@
         <el-input v-model="formInline.user" placeholder="审批人" />
         </el-form-item>
         <el-form-item label="区域">
-        <el-input v-model="formInline.user" placeholder="区域" />
+          <ccascader v-model="formInline.area"></ccascader>
+        <!-- <el-input v-model="formInline.user"  /> -->
         </el-form-item>
         <el-form-item label="类型">
         <el-select v-model="formInline.region" placeholder="活动区域" >

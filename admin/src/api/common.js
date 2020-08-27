@@ -24,7 +24,7 @@ export function GetCarsBrand(data = {}) {
 /**
  * 　 获取停车场
  */
-export function GetCarsBrand(data = {}) {
+export function GetParking(data = {}) {
     return service.request({
         method: 'post',
         url: '/common/getParking/',
