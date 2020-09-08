@@ -1,0 +1,62 @@
+.cars-wrap {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 94px;
+    z-index: 11;
+}
+.cars-wiper-wrap {
+    padding: 0 155px;
+    .swiper-container {overflow: initial;}
+    .swiper-button-prev,
+    .swiper-button-next {
+        top: 50%;
+        margin-top: -50px;
+        width: 60px;
+        height: 100px;
+        background-color: #fff;
+        outline: none;
+        @include webkit(border-radius, 100px);
+        @include webkit(box-shadow, 0 0 18px 0 rgba(0,0,0,.2));
+        @include webkit(transition, all .3s);
+        &.swiper-button-disabled {opacity: 1;}
+        &:hover {
+            background-color: $color-main;
+            &::after {
+                border-top: 3px solid $color-blur;
+            }
+        }
+        &::after {
+            content: '';
+            width: 17px;height: 17px;
+            box-sizing: border-box;
+            border-top: 3px solid #000;
+        }
+    }
+    .swiper-button-prev {
+        left: 53px;
+        &:hover {
+            &::after {
+                border-left: 3px solid $color-blur;
+            }
+        }
+        &::after {
+            border-left: 3px solid #000;
+            @include webkit(transform, rotate(-45deg));
+            margin-left: 5px;
+        }
+    }
+    .swiper-button-next {
+        right:53px;
+        &:hover {
+            &::after {
+                border-right: 3px solid $color-blur;
+            }
+        }
+        &::after {
+            border-right: 3px solid #000;
+            @include webkit(transform, rotate(45deg));
+            margin-right: 5px;
+        }
+    }
+}
