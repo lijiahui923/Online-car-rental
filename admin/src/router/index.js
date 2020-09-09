@@ -27,7 +27,7 @@ export const defaultRoutesMap = [{
             name: 'dashboard',
             component: () =>
                 import ('@/views/dashboard/index'),
-            meta: { title: '首页', icon: 'dashboard' }
+            meta: { title: '首页', icon: 'dashboard', affix: true }
         }]
     },
     {
@@ -114,6 +114,8 @@ export const defaultRoutesMap = [{
     // 404 page must be placed at the end !!!
     { path: '*', redirect: '/404', hidden: true }
 ];
+
+export　 const asyncRoutes = [];
 
 export default new Router({
     // mode: 'history', // require service support

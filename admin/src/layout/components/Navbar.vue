@@ -5,9 +5,8 @@
       class="hamburger-container"
       @toggleClick="toggleSideBar"
     />
-
-    <breadcrumb class="breadcrumb-container" />
-
+    <tagsView />
+    <!-- <breadcrumb class="breadcrumb-container" /> -->
     <div class="right-menu">
       <el-dropdown
         class="avatar-container"
@@ -57,11 +56,12 @@
 import { mapGetters } from 'vuex';
 import Breadcrumb from '@/components/Breadcrumb';
 import Hamburger from '@/components/Hamburger';
-
+import tagsView from './../../components/TagsView';
 export default {
     components: {
         Breadcrumb,
-        Hamburger
+        Hamburger,
+        tagsView
     },
     computed: {
         ...mapGetters([
@@ -86,8 +86,9 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
+  display: flex;
+  flex: 1;
   height: 50px;
-  overflow: hidden;
   position: relative;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
@@ -113,7 +114,7 @@ export default {
     float: right;
     height: 100%;
     line-height: 50px;
-
+    margin-left: 20px;
     &:focus {
       outline: none;
     }
