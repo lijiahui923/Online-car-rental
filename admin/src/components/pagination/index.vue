@@ -1,15 +1,16 @@
 <template>
   <div>
       <el-pagination
+      background
       class="currentPaage"
-      :current-page="currentPage"
-      :page-sizes="[5, 10, 15, 50,100]"
-      :page-size="5"
       layout="total, sizes, prev, pager, next, jumper"
-      :total="total"
-      @size-change="handleSizeChange"
+      v-bind="pagintionProps"
+      @prev-click="prevClick"
+      @next-click="nextClick"
       @current-change="handleCurrentChange"
-    />
+      @size-change="handleSizeChange"
+    >
+    </el-pagination>
   </div>
 </template>
 
@@ -21,31 +22,70 @@
 */
 export default {
   name: 'cpagination',
-  props: {
-    total: {
-        type: Number,
-        default: 0
-    }
-  },
+  props: {},
   components: {},
   data() {
     return {
-        currentPage:1
+      pNum: 1,
+      pSize: 5,
+      pagintionProps: {}
     };
   },
   computed: {},
-  watch: {},
+  watch: {
+    $attrs: {
+      immediate: true,
+      deep: true,
+      handler (val) {
+        console.log(val);
+        let prop = Object.assign({}, val);
+        if (prop.pageNumber) {
+          prop.currentPage = prop.pageNumber;
+        }
+        if (typeof prop.total === 'string') {
+          prop.total = Number(prop.total);
+        }
+        this.pNum = prop.currentPage;
+        this.pSize = prop.pageSize;
+        this.pagintionProps = prop;
+      }
+    }
+  },
   mounted() {},
-  created() {},
+  created() {
+    let { $attrs } = this;
+    this.pNum = $attrs.pageNumber || $attrs.currentPage;
+    this.pSize = $attrs.pageSize; 
+  },
   methods: {
-      handleSizeChange () {},
-      handleCurrentChange () {}
+      handleSizeChange (pageSize) {
+        this.pSize = pageSize;
+        this.$emit('size-change', pageSize);
+        this.$emit('update:pageSize', pageSize);
+        if (this.pNum > Math.ceil(this.pagintionProps.total / pageSize)) return;
+        this.change();
+      },
+      handleCurrentChange (pageNumber) {
+        this.pNum = pageNumber;
+        this.$emit('current-change', pageNumber);
+        this.$emit('update:currentPage', pageNumber);
+        this.$emit('update:pageNumber', pageNumber);
+      },
+      prevClick (pageNumber) {
+        this.$emit('prev-click', pageNumber);
+      },
+      nextClick (pageNumber) {
+        this.$emit('next-click', pageNumber);
+      },
+      change () {
+        this.$emit('change', this.pNum, this.pSize);
+      }
   }
 };
 </script>
 <style scoped>
 .currentPaage {
-  padding-top: 10px;
+  margin-top: 5px;
   text-align: right;
 }
 </style>
