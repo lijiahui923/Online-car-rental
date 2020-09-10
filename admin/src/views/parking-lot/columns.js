@@ -1,5 +1,11 @@
 export function columns() {
     return [{
+            checkbox: true
+        },
+        {
+            type: 'expand'
+        },
+        {
             prop: 'parkingName',
             label: '停车场名称'
         },
@@ -16,8 +22,10 @@ export function columns() {
             label: '停车场类型'
         },
         {
-            prop: 'status',
-            label: '禁启用'
+            label: "禁启用",
+            prop: "status",
+            type: "slot",
+            slotName: "status"
         }
     ];
 }

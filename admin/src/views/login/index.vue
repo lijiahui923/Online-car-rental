@@ -80,46 +80,23 @@
       >
         Login
       </el-button>
-
-      <div class="tips">
-        <span style="margin-right:20px;">username: admin</span>
-        <span> password: any</span>
-      </div>
     </el-form>
   </div>
 </template>
 
 <script>
 import sha1 from 'js-sha1';
-// import { validUsername } from '@/utils/validate'
 import { GetSms } from '@/api/user';
 export default {
     name: 'Login',
     data() {
-    // const validateUsername = (rule, value, callback) => {
-    //   if (!validUsername(value)) {
-    //     callback(new Error('Please enter the correct user name'))
-    //   } else {
-    //     callback()
-    //   }
-    // }
-    // const validatePassword = (rule, value, callback) => {
-    //   if (value.length < 6) {
-    //     callback(new Error('The password can not be less than 6 digits'))
-    //   } else {
-    //     callback()
-    //   }
-    // }
         return {
             loginForm: {
                 username: '410293095@qq.com',
                 password: 'wo123456789',
                 code: ''
             },
-            loginRules: {
-                // username: [{ required: true, trigger: 'blur', validator: validateUsername }],
-                // password: [{ required: true, trigger: 'blur', validator: validatePassword }]
-            },
+            loginRules: {},
             loading: false,
             passwordType: 'password',
             redirect: undefined
