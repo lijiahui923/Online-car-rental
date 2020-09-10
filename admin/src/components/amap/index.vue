@@ -12,6 +12,7 @@
 @create:lijiahui
 */
 import { AMapManager, lazyAMapApiLoaderInstance } from 'vue-amap';
+import { getLngLag, cityToLngLag, addMarker } from './common';
 export default {
   name: 'amap',
   props: {
@@ -39,13 +40,18 @@ export default {
       });
       // 获取鼠标点击经纬度
       this.map.on('click', e => {
-        this.$emit('lonlag', e.lnglat.getLng() + ',' + e.lnglat.getLat());
+        let { value } = getLngLag(e);
+        // 添加覆盖物
+        addMarker(value, this.map);
+        this.$emit('lnglag', value);
       });
     });
   },
   created() {},
   methods: {
-    
+    setMapCenter (data) {
+      cityToLngLag(data, this.map)
+    }
   }
 };
 </script>
