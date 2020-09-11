@@ -130,7 +130,7 @@ export default {
       this.$store.dispatch('tagsView/delCachedView', view).then(() => {
         const { fullPath } = view
         this.$nextTick(() => {
-          this.$router.replace({path: fullPath})
+          this.$router.push({path: fullPath})
         })
       })
     },

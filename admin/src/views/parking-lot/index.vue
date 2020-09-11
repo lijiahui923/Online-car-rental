@@ -67,7 +67,10 @@ export default {
   },
   mounted() {},
   methods: {
-    pageChange () {}
+    pageChange (pnum, psize) {
+      console.log(pnum,psize);
+    },
+    switchChange () {}
     // handleSelectionChange (da) {
     //   console.log(da)
     // }
