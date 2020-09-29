@@ -12,11 +12,7 @@ let common = {
             this.setViewHeight();
         });
     },
-    methods: {
-        setViewHeight() {
-            this.height = this.$root.$el.clientHeight - this.minHeight;
-        }
-    }
+    methods: {}
 }
 
 export default common;

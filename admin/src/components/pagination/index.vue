@@ -37,7 +37,6 @@ export default {
       immediate: true,
       deep: true,
       handler (val) {
-        console.log(val);
         let prop = Object.assign({}, val);
         if (prop.pageNumber) {
           prop.currentPage = prop.pageNumber;

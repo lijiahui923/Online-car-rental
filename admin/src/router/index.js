@@ -31,28 +31,6 @@ export const defaultRoutesMap = [{
         }]
     },
     {
-        path: '/example',
-        component: Layout,
-        redirect: '/example/table',
-        name: 'Example',
-        meta: { title: '例子', icon: 'el-icon-s-help' },
-        children: [{
-                path: 'table',
-                name: 'Table',
-                component: () =>
-                    import ('@/views/table/index'),
-                meta: { title: 'Table', icon: 'table' }
-            },
-            {
-                path: 'tree',
-                name: 'Tree',
-                component: () =>
-                    import ('@/views/tree/index'),
-                meta: { title: 'Tree', icon: 'tree' }
-            }
-        ]
-    },
-    {
         path: '/parking-lot',
         component: Layout,
         redirect: '/parking-lot/index',
@@ -63,15 +41,14 @@ export const defaultRoutesMap = [{
                 name: 'Index',
                 component: () =>
                     import ('@/views/parking-lot/index'),
-                meta: { title: '列表管理', icon: 'table' }
+                meta: { title: '停车场管理', icon: 'table' }
             },
             {
                 path: 'parkingAdd',
                 name: 'ParkingAdd',
                 component: () =>
                     import ('@/views/parking-lot/add'),
-                meta: { title: '新增停车场', icon: 'tree' },
-                hidden: true
+                meta: { title: '新增停车场', icon: 'tree' }
             }
         ]
     },

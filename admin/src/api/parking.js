@@ -34,7 +34,7 @@ export function Edit(data) {
     });
 }
 
-export function Eelete(data) {
+export function Delete(data) {
     return service.request({
         method: 'post',
         url: '/parking/delete/',

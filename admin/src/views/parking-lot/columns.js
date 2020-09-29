@@ -19,7 +19,9 @@ export function columns() {
         },
         {
             prop: 'type',
-            label: '停车场类型'
+            label: '停车场类型',
+            type: "slot",
+            slotName: "type"
         },
         {
             label: "禁启用",

@@ -2,10 +2,10 @@ let data = {
     data() {
         return {
             optionType: [{
-                value: '1',
+                value: '0',
                 label: '室内'
             }, {
-                value: '2',
+                value: '1',
                 label: '室外'
             }],
             optionStatus: [{
