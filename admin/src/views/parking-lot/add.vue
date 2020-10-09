@@ -31,6 +31,9 @@
                       :value="item.value"></el-radio>
                   </el-radio-group>
               </el-form-item>
+              <key-set
+              code="USER_SEX"
+              ></key-set>
             </el-col>
             <el-col :xs="24" :md="12" :lg="8">
               <el-form-item label="状态" prop="status">

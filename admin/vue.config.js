@@ -45,7 +45,14 @@ module.exports = {
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''
         }
-      }
+      },
+      "/devApi": {
+        target: "http://mock.studyinghome.com/mock/5f0d436be525ff20854f7c08/maoyan", //API服务器的地址
+        changeOrigin: true,
+        pathRewrite: {
+            "^/devApi": ''
+        }
+    }
     }
   },
   /** vue3.0内置了webpack所有东西，

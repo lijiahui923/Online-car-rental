@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import XUtils from 'xe-utils';
 import 'normalize.css/normalize.css'; // A modern alternative to CSS resets
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -9,7 +10,9 @@ import store from './store';
 import router from './router';
 import '@/icons'; // icon
 import '@/permission';
+import '@/data-initialization';
 import commComponent from '@/common';
+import keyValue from './cache-utils';
 // import "./plugin/aMap";
 import './../plugin/aMap';
 // set ElementUI lang to EN
@@ -19,7 +22,8 @@ Vue.use(commComponent);
 // Vue.use(ElementUI)
 Vue.config.productionTip = false;
 // Vue.prototype.$Proxy = interfaces;
-
+Vue.prototype.$XUtils = XUtils;
+Vue.prototype.$KeyValue = keyValue;
 new Vue({
     el: '#app',
     router,
