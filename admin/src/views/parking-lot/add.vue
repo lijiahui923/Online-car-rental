@@ -31,9 +31,7 @@
                       :value="item.value"></el-radio>
                   </el-radio-group>
               </el-form-item>
-              <key-set
-              code="USER_SEX"
-              ></key-set>
+              <key-set code="USER_SEX" size='mini' clearable></key-set>
             </el-col>
             <el-col :xs="24" :md="12" :lg="8">
               <el-form-item label="状态" prop="status">
@@ -110,7 +108,24 @@ export default {
         lnglat:[{ required: true, message: '请输入位置', trigger: 'blur' }],
         type:[{ required: true, message: '请选择类型', trigger: 'change' }],
         status:[{ required: true, message: '请选择状态', trigger: 'change' }]
-      }
+      },
+      options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        value: ''
     };
   },
   computed: {},

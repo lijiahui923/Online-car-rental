@@ -1,6 +1,12 @@
 <template>
   <div>
-        <el-select v-model="selectData">
+        <el-select
+        v-model="selectData"
+        @change="getVal"
+        @clear="clearSelect"
+        v-bind="$attrs"
+        v-on="$listeners"
+        style="width:100%;">
             <el-option
                 v-for="item in options"
                 :key="item.value"
@@ -19,23 +25,17 @@
 */
 export default {
   name: 'keySet',
+  inheritAttrs: false,
   props: {
       code: {
           type: String,
           default: ''
-      },
-      data: {
-          type: Array,
-          default: () => {
-              return [];
-          }
       }
   },
   components: {},
   data() {
     return {
         selectData: '',
-        value: '',
         options: []
     };
   },
@@ -43,17 +43,9 @@ export default {
   watch: {
       code:{
           handler (code) {
-              if (this.data.length > 0 || code === '') {return;}
               this.queryKeyValue(code);
           },
           immediate:true
-      },
-      data: {
-          handler (data) {
-              this.options = data;
-          },
-          deep: true,
-          immediate: true
       }
   },
   mounted() {},
@@ -62,24 +54,20 @@ export default {
       queryKeyValue (code) {
           let data = this.$KeyValue.getItem(code);
           this.options = data;
-          console.log(this.options)
       },
-    //   getVal (val) {
-    //       this.$emit('input', val);
-    //       let option = this.options.filter(item => item.code === val);
-    //       this.$emit('change', val, option, this.options);
-    //   },
-    //   clearSelect (val) {
-    //       if (this.$XUtils.isArray(val)) {
-    //           this.selectData = [];
-    //       } else {
-    //           this.selectData = '';
-    //       }
-    //       this.$emit('input', this.selectData);
-    //   },
-    //   removeTags (tag) {
-    //       this.$emit('removeTags', tag);
-    //   }
+      getVal (val) {
+          this.$emit('input',val);
+          let option = this.options.filter(item => item.code === val);
+          this.$emit('change', val, option, this.options);
+      },
+      clearSelect (val) {
+          if (this.$XUtils.isArray(val)) {
+              this.selectData = [];
+          } else {
+              this.selectData = '';
+          }
+          this.$emit('input', this.selectData);
+      }
   }
 };
 </script>
