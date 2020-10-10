@@ -88,6 +88,18 @@ export const defaultRoutesMap = [{
             }
         ]
     },
+    {
+        path: '/test',
+        component: Layout,
+        redirect: '/test/testIndex',
+        children: [{
+            path: 'testIndex',
+            name: 'testIndex',
+            component: () =>
+                import ('@/views/test/index'),
+            meta: { title: '测试', icon: 'dashboard' }
+        }]
+    },
     // 404 page must be placed at the end !!!
     { path: '*', redirect: '/404', hidden: true }
 ];

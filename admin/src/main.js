@@ -11,6 +11,7 @@ import router from './router';
 import '@/icons'; // icon
 import '@/permission';
 import '@/data-initialization';
+import '@/components/testRender/render';
 import commComponent from '@/common';
 import keyValue from './cache-utils';
 // import "./plugin/aMap";
