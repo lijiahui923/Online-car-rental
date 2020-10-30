@@ -38,13 +38,14 @@ export default {
                 }
             },
             [
-                self.options.map(item => {
+                self.options.map(item => {{}
                     const tagName = self.type === 'normal' ? 'el-radio' : 'el-radio-button';
                     return h(tagName, {
                         props: {
                             key: item['value'],
                             label: item['label'],
-                            value: item['value']
+                            value: item['value'],
+                            disabled: item['disabled']
                         },
                         attrs: {
                             ...self.$attrs

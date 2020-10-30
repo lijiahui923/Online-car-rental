@@ -29,7 +29,7 @@
     "vue-amap": "^0.5.10",
     "vue-router": "3.0.6",
     "vuex": "3.1.0",
-    "xe-utils": "^2.7.14"
+    "xe-utils": "^2.8.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "4.4.4",

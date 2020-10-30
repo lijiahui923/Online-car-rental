@@ -8,8 +8,8 @@
       center>
       <span>{{msg}}</span>
       <!-- <span slot="footer" class="dialog-footer">
-        <el-button @click="handleClick('cancel')">不重新登录</el-button>
-        <el-button type="primary" @click="handleClick('determine')">去登录页面</el-button>
+        <el-button @click="handleClick('cancel')">取消</el-button>
+        <el-button type="primary" @click="handleClick('determine')">确定</el-button>
       </span> -->
     </el-dialog>
   </div>

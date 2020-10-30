@@ -85,7 +85,9 @@ export default {
       this.pagination.pageSize = psize;
       this.getParkLot();
     },
-    switchChange () {},
+    switchChange (data) {
+      console.log(data);
+    },
     getParkLot () {
       GetList(this.pagination).then(res =>{
         let  { data } = res.data;
@@ -95,7 +97,7 @@ export default {
     },
     getType (value) {
       const typeLabel = this.optionType.filter(item => item.value == value);
-      console.log(typeLabel);
+      // console.log(typeLabel);
       // this.list.forEach(item => {
       //   item.type = typeLabel.label;
       //   console.log(typeLabel.label)
@@ -104,7 +106,7 @@ export default {
     // 删除
     handDelete (row) {
       Delete(row).then(res =>{
-        console.log(res);
+        // console.log(res);
       });
     }
   },
@@ -116,7 +118,7 @@ export default {
     // }
   capitalize: function (value) {
     // let ss = this.optionType;
-    console.log(this)
+    // console.log(this)
     // console.log(this.optionType.filter(item => item.value === value))
       // if (!value) return '';
       // value = value.toString();

@@ -64,7 +64,7 @@
           </el-row>
       </el-form>
       <div style="text-align:center;margin-top:30px;">
-        <el-button　@click="submitForm"> 保存 </el-button>
+        <el-button　@click="submitForm" value="提交"/>
       </div>
     </el-card>
   </div>

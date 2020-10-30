@@ -7,3 +7,7 @@ export function formatDate(now) {
     var second = now.getSeconds(); //返回日期中的秒数（0到59）
     return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
 }
+// export function listToTree (list = [], config, fun) {
+//     let root = {};
+//     root[config.key]  =
+// }

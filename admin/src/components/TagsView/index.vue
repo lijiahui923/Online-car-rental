@@ -126,7 +126,6 @@ export default {
     refreshSelectedTag(view) {
       this.$store.dispatch('tagsView/delCachedView', view).then(() => {
         const { fullPath } = view
-        console.log(fullPath)
         this.$router.push({path: '/'});
         setTimeout(() => {
           this.$router.push({path: fullPath})

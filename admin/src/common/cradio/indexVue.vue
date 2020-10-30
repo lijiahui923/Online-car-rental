@@ -5,6 +5,7 @@
               <el-radio
                 v-bind="$attrs"
                 v-for="item in options"
+                :disabled="item.disabled"
                 :key="item.value"
                 :label="item.label"
                 :value="item.value">
@@ -14,6 +15,7 @@
               <el-radio-button
               v-bind="$attrs"
               v-for="item in options"
+              :disabled="item.disabled"
               :key="item.value"
               :label="item.label"
               :value="item.value">
@@ -30,7 +32,7 @@
 @create:lijiahui
 */
 export default {
-  name: 'cradio',
+  name: 'cRadio',
   props: {
       code: {
           type: String,
