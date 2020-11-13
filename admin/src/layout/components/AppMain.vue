@@ -4,7 +4,7 @@
       name="fade-transform"
       mode="out-in"
     >
-      <router-view :key="key" />
+      <router-view :key="key" class="content-main"/>
     </transition>
   </section>
 </template>
@@ -35,6 +35,11 @@ export default {
 }
 .fixed-header+.app-main {
   padding-top: 50px;
+}
+.content-main {
+  background: #fff;
+  margin: 10px;
+  border-radius: 5px;
 }
 </style>
 

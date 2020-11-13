@@ -1,21 +1,21 @@
 <template>
-  <div id="app" @click="isTimeOut">
-    <!-- <el-dialog
-      title="提示"
-      :visible.sync="dialogVisible"
-      width="30%"
-      center>
-      <span>会话超时是否要重新登录</span>
-      <span slot="footer" class="dialog-footer">
-        <el-button @click="handleClick('cancel')">不重新登录</el-button>
-        <el-button type="primary" @click="handleClick('determine')">去登录页面</el-button>
-      </span>
-    </el-dialog> -->
-    <!-- <cdialog :messages="messages" :show="show"></cdialog> -->
-    <router-view />
-  </div>
+    <div id="app" @click="isTimeOut">
+      <!-- <el-dialog
+        title="提示"
+        :visible.sync="dialogVisible"
+        width="30%"
+        center>
+        <span>会话超时是否要重新登录</span>
+        <span slot="footer" class="dialog-footer">
+          <el-button @click="handleClick('cancel')">不重新登录</el-button>
+          <el-button type="primary" @click="handleClick('determine')">去登录页面</el-button>
+        </span>
+      </el-dialog> -->
+      <!-- <cdialog :messages="messages" :show="show"></cdialog> -->
+      <router-view />
+    </div>
 </template>
-
+ 
 <script>
 import { getToken, removeToken, removeUserName } from './utils/auth';
 export default {

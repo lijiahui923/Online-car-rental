@@ -31,9 +31,8 @@ export const defaultRoutesMap = [{
         }]
     },
     {
-        path: '/parking-lot',
+        path: '/parking',
         component: Layout,
-        redirect: '/parking-lot/index',
         name: 'parking',
         meta: { title: '停车场', icon: 'el-icon-s-help' },
         children: [{
