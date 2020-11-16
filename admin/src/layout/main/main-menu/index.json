@@ -1,0 +1,64 @@
+[
+    {
+        "id": "plat",
+        "isLeaf": 0,
+        "icons": "el-icon-menu",
+        "needAuth": 1,
+        "disable": 0,
+        "order": 0,
+        "no": "1001",
+        "parentNo": "root",
+        "path": "/cart/plat",
+        "name": "cart/plat",
+        "url": "/cart/plat",
+        "title": "平台管理",
+        "children": [
+            {
+                "id": "baseData",
+                "isLeaf": 0,
+                "icons": "el-icon-menu",
+                "needAuth": 1,
+                "disable": 0,
+                "order": 0,
+                "no": "10011001",
+                "parentNo": "1001",
+                "path": "/baseData",
+                "name": "baseData",
+                "url": "/baseData",
+                "title": "平台管理",
+                "children": [
+                    {
+                        "id": "user",
+                        "isLeaf": 1,
+                        "icons": "el-icon-plus-user",
+                        "needAuth": 1,
+                        "disable": 0,
+                        "order": 0,
+                        "no": "100110011001",
+                        "parentNo": "10011001",
+                        "path": "/user",
+                        "name": "user",
+                        "url": "/user",
+                        "title": "用户管理",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "parking",
+        "isLeaf": 0,
+        "icons": "'el-icon-s-help",
+        "needAuth": 1,
+        "disable": 0,
+        "order": 1,
+        "no": "1002",
+        "parentNo": "root",
+        "path": "/cart/parking-lot",
+        "name": "cart/parking-lot",
+        "url": "/cart/parking-lot",
+        "title": "停车场管理",
+        "children": []
+    }
+]

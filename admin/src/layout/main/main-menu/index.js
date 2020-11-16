@@ -23,14 +23,56 @@ export default {
                     }
                 }
             },
-            this.menuData.map(item => this.createdMenuTitle(h, item))
+            this.menuData.filter(item => !(Number(item.disable))).map(item => this.createdMenuItem(h, item))
         );
     },
     methods: {
-        createdMenuTitle (h, item) {
-            console.log(Object.prototype.toString.call(item.children));
-            // console.log(h, item);
+        createdMenuItem (h, item) {
             let haveChildren = Object.prototype.toString.call(item.children) && item.children.length;
+            const index = item.no;
+            let props = { ...item, index };
+            if (haveChildren) {
+                return h(
+                    'el-submenu',
+                    { props, key: index },
+                    [
+                        h('template', {slot: 'title'}, this.createdIconTitle(h, item)),
+                        ...item.children.filter(item => !(Number(item.disable))).map(item => this.createdMenuItem(h, item))
+                    ]
+                );
+            } else {
+                props.index = this.getItemUrl(item.path);
+                return h(
+                    'el-menu-item',
+                    {
+                        props,
+                        key: index,
+                        on: {
+                            click: () => {
+                                this.$emit('select', item, this.indexPath);
+                            }
+                        }
+                    },
+                    this.createdIconTitle(h, item)
+                )
+            }
+        },
+        createdIconTitle (h, item) {
+            let nodes = [];
+            if (item.icons) {
+                nodes.push(h('i', { 'class': item.icons}));
+            }
+            nodes.push(h('span', { slot: 'title' }, item.title));
+            return nodes;
+        },
+        getItemUrl (url) {
+            const reg = new RegExp(/\{.+?}/);
+            let path = url;
+            if (reg.test(url)) {
+                const arr = url.split('/');
+                path = `/${arr[1]}`;
+            }
+            return path;
         }
     }
 }

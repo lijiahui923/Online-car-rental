@@ -1,5 +1,21 @@
 <template>
-  <div></div>
+    <el-tabs
+      id="main-tabs"
+      v-model="activeTab"
+      type="card"
+      @contextmenu.native.prevent
+      @tab-click="previewTagRoute"
+      @tab-remove="closeTab"
+    >
+    <el-tab-pane
+      v-for="(tabs, index) in tabs"
+      :key="`${tabs.name}_${index}`"
+      :closable="!tab.hideClose"
+      :name="item.path"
+    >
+      {{item.content}}
+    </el-tab-pane>
+  </el-tabs>
 </template>
 
 <script>
